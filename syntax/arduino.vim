@@ -2,11 +2,11 @@
 " Language:    Arduino
 " Maintainer:  Rafi Khan <zetoslab@gmail.com>
 " Last Change: 24 February 2015
-" License:     VIM license (:help license, replace vim by arduino.vim)
+
+" Rafi Khan Copyright (c) 2015
 
 " Syntax highlighting like in the Arduino IDE 
-" From version: 1:1.0.5+dfsg2-2
-
+" From version: 1.6.0
 
 
 " For version 5.x: Clear all syntax items
@@ -155,6 +155,7 @@ syn keyword arduinoFunc sin
 syn keyword arduinoFunc sq
 syn keyword arduinoFunc sqrt
 syn keyword arduinoFunc tan
+syn keyword arduinoFunc pow
 syn keyword arduinoFunc bitRead
 syn keyword arduinoFunc bitWrite
 syn keyword arduinoFunc bitSet
@@ -181,10 +182,12 @@ syn keyword arduinoFunc pulseIn
 syn keyword arduinoFunc shiftIn
 syn keyword arduinoFunc shiftOut
 syn keyword arduinoFunc tone
+syn keyword arduinoFunc yield
 syn keyword arduinoFunc Serial
 syn keyword arduinoFunc Serial1
 syn keyword arduinoFunc Serial2
 syn keyword arduinoFunc Serial3
+syn keyword arduinoFunc SerialUSB
 syn keyword arduinoFunc begin
 syn keyword arduinoFunc end
 syn keyword arduinoFunc peek
@@ -192,6 +195,7 @@ syn keyword arduinoFunc read
 syn keyword arduinoFunc print
 syn keyword arduinoFunc println
 syn keyword arduinoFunc available
+syn keyword arduinoFunc availableForWrite
 syn keyword arduinoFunc flush
 syn keyword arduinoFunc setTimeout
 syn keyword arduinoFunc find
@@ -202,6 +206,25 @@ syn keyword arduinoFunc readBytes
 syn keyword arduinoFunc readBytesUntil
 syn keyword arduinoFunc readString
 syn keyword arduinoFunc readStringUntil
+syn keyword arduinoFunc trim
+syn keyword arduinoFunc toUpperCase
+syn keyword arduinoFunc toLowerCase
+syn keyword arduinoFunc charAt
+syn keyword arduinoFunc compareTo
+syn keyword arduinoFunc concat
+syn keyword arduinoFunc endsWith
+syn keyword arduinoFunc startsWith
+syn keyword arduinoFunc equals
+syn keyword arduinoFunc equalsIgnoreCase
+syn keyword arduinoFunc getBytes
+syn keyword arduinoFunc indexOf
+syn keyword arduinoFunc lastIndexOf
+syn keyword arduinoFunc length
+syn keyword arduinoFunc replace
+syn keyword arduinoFunc setCharAt
+syn keyword arduinoFunc substring
+syn keyword arduinoFunc toCharArray
+syn keyword arduinoFunc toInt
 "}}}
 "# USB-related keywords {{{
 syn keyword arduinoFunc Keyboard
@@ -218,7 +241,7 @@ syn keyword arduinoFunc loop
 "}}}
 "####################################### {{{
 "}}}
-"# Syntax Coloring Map For Ultrasound {{{
+"# Syntax Coloring Map For IRremote {{{
 "}}}
 "####################################### {{{
 "}}}
@@ -227,58 +250,51 @@ syn keyword arduinoFunc loop
 "# Datatypes (KEYWORD1) {{{
 "}}}
 "####################################### {{{
-syn keyword arduinoConstant EEPROM
+syn keyword  decode_results
+syn keyword  IRrecv
+syn keyword  IRsend
 "}}}
 "####################################### {{{
 "}}}
 "# Methods and Functions (KEYWORD2) {{{
 "}}}
 "####################################### {{{
+syn keyword  blink13
+syn keyword  decode
+syn keyword  enableIRIn
+syn keyword  resume
+syn keyword  enableIROut
+syn keyword  sendNEC
+syn keyword  sendSony
+syn keyword  
+syn keyword  
+syn keyword  sendRaw
+syn keyword  sendRC5
+syn keyword  sendRC6
+syn keyword  
+syn keyword  
+syn keyword  
+syn keyword  
+"}}}
+"# {{{
 "}}}
 "####################################### {{{
 "}}}
 "# Constants (LITERAL1) {{{
 "}}}
 "####################################### {{{
-"}}}
-"####################################### {{{
-"}}}
-"# Syntax Coloring Map For Wire {{{
-"}}}
-"####################################### {{{
-"}}}
-"####################################### {{{
-"}}}
-"# Datatypes (KEYWORD1) {{{
-"}}}
-"####################################### {{{
-"}}}
-"####################################### {{{
-"}}}
-"# Methods and Functions (KEYWORD2) {{{
-"}}}
-"####################################### {{{
-syn keyword  begin
-syn keyword  beginTransmission
-syn keyword  endTransmission
-syn keyword  requestFrom
-syn keyword  send
-syn keyword  receive
-syn keyword  onReceive
-syn keyword  onRequest
-"}}}
-"####################################### {{{
-"}}}
-"# Instances (KEYWORD2) {{{
-"}}}
-"####################################### {{{
-syn keyword  Wire
-"}}}
-"####################################### {{{
-"}}}
-"# Constants (LITERAL1) {{{
-"}}}
-"####################################### {{{
+syn keyword arduinoConstant NEC
+syn keyword arduinoConstant SONY
+syn keyword  
+syn keyword  
+syn keyword arduinoConstant RC5
+syn keyword arduinoConstant RC6
+syn keyword  
+syn keyword  
+syn keyword  
+syn keyword  
+syn keyword arduinoConstant UNKNOWN
+syn keyword arduinoConstant REPEAT
 "}}}
 "####################################### {{{
 "}}}
@@ -288,10 +304,17 @@ syn keyword  Wire
 "}}}
 "####################################### {{{
 "}}}
-"# Datatypes (KEYWORD1) {{{
+"# Library (KEYWORD3) {{{
 "}}}
 "####################################### {{{
 syn keyword  WiFi
+syn keyword  WiFiUdp
+"}}}
+"####################################### {{{
+"}}}
+"# Datatypes (KEYWORD1) {{{
+"}}}
+"####################################### {{{
 syn keyword  Client
 syn keyword  Server
 "}}}
@@ -300,6 +323,7 @@ syn keyword  Server
 "# Methods and Functions (KEYWORD2) {{{
 "}}}
 "####################################### {{{
+syn keyword  firmwareVersion
 syn keyword  status
 syn keyword  connect
 syn keyword  write
@@ -371,6 +395,33 @@ syn keyword  readMicroseconds
 "}}}
 "####################################### {{{
 "}}}
+"# Syntax Coloring Map For Audio {{{
+"}}}
+"####################################### {{{
+"}}}
+"####################################### {{{
+"}}}
+"# Datatypes (KEYWORD1) {{{
+"}}}
+"####################################### {{{
+syn keyword  Audio
+"}}}
+"####################################### {{{
+"}}}
+"# Methods and Functions (KEYWORD2) {{{
+"}}}
+"####################################### {{{
+syn keyword  prepare
+syn keyword  write
+"}}}
+"####################################### {{{
+"}}}
+"# Constants (LITERAL1) {{{
+"}}}
+"####################################### {{{
+"}}}
+"####################################### {{{
+"}}}
 "# Syntax Coloring Map For Esplora {{{
 "}}}
 "#######################################  {{{
@@ -403,6 +454,9 @@ syn keyword  writeBlue
 syn keyword  readRed
 syn keyword  readGreen
 syn keyword  readBlue
+syn keyword  
+syn keyword  
+syn keyword  
 syn keyword  tone
 syn keyword  noTone
 "}}}
@@ -519,6 +573,43 @@ syn keyword arduinoConstant FILE_WRITE
 "}}}
 "####################################### {{{
 "}}}
+"# Syntax Coloring Map Temboo {{{
+"}}}
+"####################################### {{{
+"}}}
+"####################################### {{{
+"}}}
+"# Class (KEYWORD3) {{{
+"}}}
+"####################################### {{{
+syn keyword  Temboo
+"}}}
+"####################################### {{{
+"}}}
+"# Datatypes (KEYWORD2) {{{
+"}}}
+"####################################### {{{
+syn keyword  TembooChoreo
+"}}}
+"####################################### {{{
+"}}}
+"# Methods and Functions (KEYWORD2) {{{
+"}}}
+"####################################### {{{
+syn keyword  begin
+syn keyword  setAccountName
+syn keyword  setAppKeyName
+syn keyword  setAppKey
+syn keyword  setChoreo
+syn keyword  setCredential
+syn keyword  setSavedInputs
+syn keyword  addInput
+syn keyword  addOutputFilter
+syn keyword  setSettingsFileToWrite
+syn keyword  setSettingsFileToRead
+"}}}
+"####################################### {{{
+"}}}
 "# Syntax Coloring Map For GSM {{{
 "}}}
 "#######################################  {{{
@@ -597,79 +688,96 @@ syn keyword arduinoConstant GSM_MODE_GSM850_EGSM_DCS_PCS
 "}}}
 "####################################### {{{
 "}}}
-"# Syntax Coloring Map SPI {{{
+"# Syntax Coloring Map For Bridge {{{
 "}}}
 "####################################### {{{
 "}}}
 "####################################### {{{
 "}}}
-"# Datatypes (KEYWORD1) {{{
+"# Class (KEYWORD3) {{{
 "}}}
 "####################################### {{{
-syn keyword arduinoConstant SPI
+syn keyword  Bridge
+syn keyword  FileIO
+syn keyword  FileSystem
+syn keyword  Console
+syn keyword  Process
+syn keyword  Mailbox
+syn keyword  HttpClient
+syn keyword  YunServer
+syn keyword  YunClient
 "}}}
 "####################################### {{{
 "}}}
 "# Methods and Functions (KEYWORD2) {{{
 "}}}
 "####################################### {{{
-syn keyword  begin
-syn keyword  end
+"}}}
+"# methods names in commond {{{
+syn keyword arduinoFunc begin
+syn keyword arduinoFunc end
+syn keyword arduinoFunc available
+syn keyword arduinoFunc read
+syn keyword arduinoFunc peek
+syn keyword arduinoFunc write
+syn keyword arduinoFunc flush
+syn keyword arduinoFunc bool
+"}}}
+"# Bridge Class {{{
 syn keyword  transfer
-syn keyword  setBitOrder
-syn keyword  setDataMode
-syn keyword  setClockDivider
+syn keyword  put
+syn keyword  get
+"}}}
+"# Console Class {{{
+syn keyword  buffer
+syn keyword  noBuffer
+syn keyword  connected
+"}}}
+"# FileIO Class {{{
+syn keyword  File
+syn keyword  seek
+syn keyword  position
+syn keyword  size
+syn keyword  close
+syn keyword  name
+syn keyword  isDirectory
+syn keyword  openNextFile
+syn keyword  rewindDirectory
+"}}}
+"# Process Class {{{
+syn keyword  addParameter
+syn keyword  runAsynchronously
+syn keyword  run
+syn keyword  running
+syn keyword  exitValue
+syn keyword  runShellCommand
+syn keyword  runShellCommandAsynchronously
+"}}}
+"# Mailbox Class {{{
+syn keyword  readMessage
+syn keyword  writeMessage
+syn keyword  writeJSON
+syn keyword  message Available
+"}}}
+"# HttpClient Class {{{
+syn keyword  getAsynchronously
+syn keyword  ready
+syn keyword  getResult
+"}}}
+"# YunServer Class {{{
+syn keyword  accept
+syn keyword  stop
+syn keyword  connect
+syn keyword  connected
 "}}}
 "####################################### {{{
 "}}}
 "# Constants (LITERAL1) {{{
 "}}}
 "####################################### {{{
-syn keyword arduinoConstant SPI_CLOCK_DIV4
-syn keyword arduinoConstant SPI_CLOCK_DIV16
-syn keyword arduinoConstant SPI_CLOCK_DIV64
-syn keyword arduinoConstant SPI_CLOCK_DIV128
-syn keyword arduinoConstant SPI_CLOCK_DIV2
-syn keyword arduinoConstant SPI_CLOCK_DIV8
-syn keyword arduinoConstant SPI_CLOCK_DIV32
-syn keyword arduinoConstant SPI_CLOCK_DIV64
-syn keyword arduinoConstant SPI_MODE0
-syn keyword arduinoConstant SPI_MODE1
-syn keyword arduinoConstant SPI_MODE2
-syn keyword arduinoConstant SPI_MODE3
-"}}}
-"####################################### {{{
-"}}}
-"# Syntax Coloring Map for NewSoftSerial {{{
-"}}}
-"####################################### {{{
-"}}}
-"####################################### {{{
-"}}}
-"# Datatypes (KEYWORD1) {{{
-"}}}
-"####################################### {{{
-syn keyword  NewSoftSerial
-"}}}
-"####################################### {{{
-"}}}
-"# Methods and Functions (KEYWORD2) {{{
-"}}}
-"####################################### {{{
-syn keyword  begin
-syn keyword  end
-syn keyword  read
-syn keyword  available
-syn keyword  isListening
-syn keyword  overflow
-syn keyword  flush
-syn keyword  listen
-"}}}
-"####################################### {{{
-"}}}
-"# Constants (LITERAL1) {{{
-"}}}
-"####################################### {{{
+syn keyword arduinoConstant FILE_READ
+syn keyword arduinoConstant FILE_WRITE
+syn keyword arduinoConstant FILE_APPEND
 "}}}
 "####################################### {{{
 "}}}
@@ -707,6 +815,72 @@ syn keyword  endPacket
 syn keyword  parsePacket
 syn keyword  remoteIP
 syn keyword  remotePort
+"}}}
+"####################################### {{{
+"}}}
+"# Constants (LITERAL1) {{{
+"}}}
+"####################################### {{{
+"}}}
+"####################################### {{{
+"}}}
+"# Syntax Coloring Map For USBHost {{{
+"}}}
+"####################################### {{{
+"}}}
+"####################################### {{{
+"}}}
+"# Datatypes (KEYWORD1) {{{
+"}}}
+"####################################### {{{
+syn keyword  MouseController
+syn keyword  USBHost
+syn keyword  KeyboardController
+"}}}
+"####################################### {{{
+"}}}
+"# Methods and Functions (KEYWORD2) {{{
+"}}}
+"####################################### {{{
+syn keyword  Task
+syn keyword  mouseMoved
+syn keyword  mouseDragged
+syn keyword  mousePressed
+syn keyword  mouseReleased
+syn keyword  getXChange
+syn keyword  getYChange
+syn keyword  getButton
+syn keyword  keyPressed
+syn keyword  keyReleased
+syn keyword  getModifiers
+syn keyword  getKey
+syn keyword  getOemKey
+"}}}
+"####################################### {{{
+"}}}
+"# Constants (LITERAL1) {{{
+"}}}
+"####################################### {{{
+"}}}
+"####################################### {{{
+"}}}
+"# Syntax Coloring Map For Scheduler {{{
+"}}}
+"####################################### {{{
+"}}}
+"####################################### {{{
+"}}}
+"# Datatypes (KEYWORD1) {{{
+"}}}
+"####################################### {{{
+syn keyword  Scheduler
+"}}}
+"####################################### {{{
+"}}}
+"# Methods and Functions (KEYWORD2) {{{
+"}}}
+"####################################### {{{
+syn keyword  startLoop
 "}}}
 "####################################### {{{
 "}}}
@@ -776,6 +950,22 @@ syn keyword arduinoConstant TOTAL_ANALOG_PINS
 syn keyword arduinoConstant TOTAL_DIGITAL_PINS
 syn keyword arduinoConstant TOTAL_PORTS
 syn keyword arduinoConstant ANALOG_PORT
+"}}}
+syn keyword  SpacebrewYun
+syn keyword  addPublish
+syn keyword  addSubscribe
+syn keyword  connect
+syn keyword  verbose
+syn keyword  monitor
+syn keyword  onMessage
+syn keyword  send
+syn keyword  onRangeMessage
+syn keyword  onStringMessage
+syn keyword  onBooleanMessage
+syn keyword  onCustomMessage
+syn keyword  onOpen
+syn keyword  onClose
+syn keyword  onError
 "}}}
 "####################################### {{{
 "}}}
@@ -912,6 +1102,231 @@ syn keyword  rightToLeft
 syn keyword  scrollDisplayLeft
 syn keyword  scrollDisplayRight
 syn keyword  createChar
+syn keyword  setRowOffsets
+"}}}
+"####################################### {{{
+"}}}
+"# Constants (LITERAL1) {{{
+"}}}
+"####################################### {{{
+"}}}
+"####################################### {{{
+"}}}
+"# Syntax Coloring Map For Wire {{{
+"}}}
+"####################################### {{{
+"}}}
+"####################################### {{{
+"}}}
+"# Datatypes (KEYWORD1) {{{
+"}}}
+"####################################### {{{
+"}}}
+"####################################### {{{
+"}}}
+"# Methods and Functions (KEYWORD2) {{{
+"}}}
+"####################################### {{{
+syn keyword  begin
+syn keyword  setClock
+syn keyword  beginTransmission
+syn keyword  endTransmission
+syn keyword  requestFrom
+syn keyword  send
+syn keyword  receive
+syn keyword  onReceive
+syn keyword  onRequest
+"}}}
+"####################################### {{{
+"}}}
+"# Instances (KEYWORD2) {{{
+"}}}
+"####################################### {{{
+syn keyword  Wire
+syn keyword  Wire1
+"}}}
+"####################################### {{{
+"}}}
+"# Constants (LITERAL1) {{{
+"}}}
+"####################################### {{{
+"}}}
+"####################################### {{{
+"}}}
+"# Syntax Coloring Map SPI {{{
+"}}}
+"####################################### {{{
+"}}}
+"####################################### {{{
+"}}}
+"# Datatypes (KEYWORD1) {{{
+"}}}
+"####################################### {{{
+syn keyword arduinoConstant SPI
+"}}}
+"####################################### {{{
+"}}}
+"# Methods and Functions (KEYWORD2) {{{
+"}}}
+"####################################### {{{
+syn keyword  begin
+syn keyword  end
+syn keyword  transfer
+"}}}
+"#setBitOrder	KEYWORD2 {{{
+syn keyword  setDataMode
+syn keyword  setClockDivider
+"}}}
+"####################################### {{{
+"}}}
+"# Constants (LITERAL1) {{{
+"}}}
+"####################################### {{{
+syn keyword arduinoConstant SPI_MODE0
+syn keyword arduinoConstant SPI_MODE1
+syn keyword arduinoConstant SPI_MODE2
+syn keyword arduinoConstant SPI_MODE3
+syn keyword arduinoConstant SPI_CONTINUE
+syn keyword arduinoConstant SPI_LAST
+"}}}
+"####################################### {{{
+"}}}
+"# Syntax Coloring Map For Ultrasound {{{
+"}}}
+"####################################### {{{
+"}}}
+"####################################### {{{
+"}}}
+"# Datatypes (KEYWORD1) {{{
+"}}}
+"####################################### {{{
+syn keyword arduinoConstant EEPROM
+"}}}
+"####################################### {{{
+"}}}
+"# Methods and Functions (KEYWORD2) {{{
+"}}}
+"####################################### {{{
+"}}}
+"####################################### {{{
+"}}}
+"# Constants (LITERAL1) {{{
+"}}}
+"####################################### {{{
+"}}}
+"####################################### {{{
+"}}}
+"# Syntax Coloring Map For Wire {{{
+"}}}
+"####################################### {{{
+"}}}
+"####################################### {{{
+"}}}
+"# Datatypes (KEYWORD1) {{{
+"}}}
+"####################################### {{{
+"}}}
+"####################################### {{{
+"}}}
+"# Methods and Functions (KEYWORD2) {{{
+"}}}
+"####################################### {{{
+syn keyword  begin
+syn keyword  setClock
+syn keyword  beginTransmission
+syn keyword  endTransmission
+syn keyword  requestFrom
+syn keyword  send
+syn keyword  receive
+syn keyword  onReceive
+syn keyword  onRequest
+"}}}
+"####################################### {{{
+"}}}
+"# Instances (KEYWORD2) {{{
+"}}}
+"####################################### {{{
+syn keyword  Wire
+"}}}
+"####################################### {{{
+"}}}
+"# Constants (LITERAL1) {{{
+"}}}
+"####################################### {{{
+"}}}
+"####################################### {{{
+"}}}
+"# Syntax Coloring Map SPI {{{
+"}}}
+"####################################### {{{
+"}}}
+"####################################### {{{
+"}}}
+"# Datatypes (KEYWORD1) {{{
+"}}}
+"####################################### {{{
+syn keyword arduinoConstant SPI
+"}}}
+"####################################### {{{
+"}}}
+"# Methods and Functions (KEYWORD2) {{{
+"}}}
+"####################################### {{{
+syn keyword  begin
+syn keyword  end
+syn keyword  transfer
+syn keyword  setBitOrder
+syn keyword  setDataMode
+syn keyword  setClockDivider
+"}}}
+"####################################### {{{
+"}}}
+"# Constants (LITERAL1) {{{
+"}}}
+"####################################### {{{
+syn keyword arduinoConstant SPI_CLOCK_DIV4
+syn keyword arduinoConstant SPI_CLOCK_DIV16
+syn keyword arduinoConstant SPI_CLOCK_DIV64
+syn keyword arduinoConstant SPI_CLOCK_DIV128
+syn keyword arduinoConstant SPI_CLOCK_DIV2
+syn keyword arduinoConstant SPI_CLOCK_DIV8
+syn keyword arduinoConstant SPI_CLOCK_DIV32
+syn keyword arduinoConstant SPI_CLOCK_DIV64
+syn keyword arduinoConstant SPI_MODE0
+syn keyword arduinoConstant SPI_MODE1
+syn keyword arduinoConstant SPI_MODE2
+syn keyword arduinoConstant SPI_MODE3
+"}}}
+"####################################### {{{
+"}}}
+"# Syntax Coloring Map for SoftwareSerial {{{
+"}}}
+"# (formerly NewSoftSerial) {{{
+"}}}
+"####################################### {{{
+"}}}
+"####################################### {{{
+"}}}
+"# Datatypes (KEYWORD1) {{{
+"}}}
+"####################################### {{{
+syn keyword  SoftwareSerial
+"}}}
+"####################################### {{{
+"}}}
+"# Methods and Functions (KEYWORD2) {{{
+"}}}
+"####################################### {{{
+syn keyword  begin
+syn keyword  end
+syn keyword  read
+syn keyword  write
+syn keyword  available
+syn keyword  isListening
+syn keyword  overflow
+syn keyword  flush
+syn keyword  listen
+syn keyword  peek
 "}}}
 "####################################### {{{
 "}}}
